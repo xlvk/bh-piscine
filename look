@@ -1,1 +1,3 @@
-find -name 'a*' -o find -name '*z' -o find -name 'z*a!'
+find -name 'a*' -o 
+find -name '*z' -o 
+find -name 'z*a!'
