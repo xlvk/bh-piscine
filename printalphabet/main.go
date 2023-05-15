@@ -1,9 +1,9 @@
 package main
 
-import "fmt"
+import "github.com/01-edu/z01"
 func main() {
-for i:='a'; i<= 'z'; i++ {
-	fmt.Printf("%c",i)
-}
+	for i:='a'; i<= 'z'; i++ {
+		z01.PrintRune(i)
+	}
 
 }
