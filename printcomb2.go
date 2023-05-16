@@ -15,8 +15,8 @@ func PrintComb2() {
 					if i == '9' && j == '8' && k == '9' && o == '9' {
 						break
 					} else {
-					z01.PrintRune(',')
-					z01.PrintRune(' ')
+						z01.PrintRune(',')
+						z01.PrintRune(' ')
 					}
 				}
 			}
