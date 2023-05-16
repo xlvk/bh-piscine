@@ -8,11 +8,6 @@ func IsNegative(nb int) {
 	else {
 		z01.PrintRune("F")
 	}
-
-	for i := 'z'; i >= 'a'; i-- {
-		z01.PrintRune(i)
-	}
-	z01.PrintRune('\n')
 }
 
 func main() {
