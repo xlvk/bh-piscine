@@ -14,7 +14,8 @@ func PrintComb2() {
 					z01.PrintRune(' ')
 					z01.PrintRune(k)
 					if count == 1 {
-						z01.PrintRune(o + 1)
+						o := '1'
+						z01.PrintRune(o)
 					} else {
 						z01.PrintRune(o)
 					}
