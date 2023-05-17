@@ -7,4 +7,3 @@ func StrRev(s string) string {
 		v[i], v[j] = v[j], v[i]
 	}
 }
-
