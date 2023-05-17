@@ -1,6 +1,6 @@
 package piscine
 
 func BasicAtoi(s string) int {
-	num, _ := strcinv.Aoi(s)
+	num, _ := strconv.Aoi(s)
 	return num
 }
