@@ -13,5 +13,4 @@ func BasicAtoi2(s string) int {
 		num = num*10 + x
 	}
 	return num
-
 }
