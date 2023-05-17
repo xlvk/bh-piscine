@@ -1,7 +1,7 @@
 package piscine
 
 func BasicAtoi2(s string) int {
-	if len(s) == o {
+	if len(s) == 0 {
 		return 0
 	}
 	num := 0
