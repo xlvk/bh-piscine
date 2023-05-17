@@ -2,7 +2,7 @@ package piscine
 
 import "github.com/01-edu/z01"
 
-func printInt(n int) {
+func PrintNbr(n int) {
     digits := []byte{}
     negative := false
     if n < 0 {
@@ -15,11 +15,11 @@ func printInt(n int) {
         n /= 10
     }
     if negative {
-        fmt.Print("-")
+        z01.PrintRune("-")
     }
     if len(digits) == 0 {
-        fmt.Print("0")
+        z01.PrintRune("0")
     } else {
-        fmt.Print(string(digits))
+		z01.PrintRune(string(digits))
     }
 }
