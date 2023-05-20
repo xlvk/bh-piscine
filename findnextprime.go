@@ -11,6 +11,7 @@ func IsPrime(nb int) bool {
 	}
 	return true
 }
+
 func FindNextPrime(nb int) bool {
 	if nb < 2 {
 		return 2
