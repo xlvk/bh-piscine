@@ -1,11 +1,8 @@
 package piscine
 
-import "math"
-
 func Sqrt(nb int) int {
-	result := int(math.Sqqrt(float64(nb)))
 	start := 1
-	end := nb 
+	end := nb
 	for start <= end {
 		mid := (start + end) / 2
 		square := mid * mid
