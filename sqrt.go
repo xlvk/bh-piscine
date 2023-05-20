@@ -11,7 +11,7 @@ func Sqrt(nb int) int {
 		} else if square < nb {
 			start = mid + 1
 		} else {
-			mid - 1
+			end = mid - 1
 		}
 	}
 	return 0
