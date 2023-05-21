@@ -1,13 +1,15 @@
 package piscine
 
-import "unicode"
-
 func AlphaCount(s string) int {
 	count := 0
 	for _, char := range s {
-		if unicode.IsLetter(char) {
+		if isLetter(char) {
 			count++
 		}
 	}
 	return count
+}
+
+func isLetter(char rune) bool {
+	return (char >= 'A' && char <= 'Z') || (char >= 'a' && char <= 'z')
 }
