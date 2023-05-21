@@ -6,33 +6,29 @@ import (
 
 const n = 8
 
-var (
-	board     [n][n]bool
-	solutions [][]int
-)
-
 func EightQueens() {
-	solutions = make([][]int, 0)
-	placeQueens(0)
-	printSolutions()
+	solutions := make([][]int, 0)
+	board := [n][n]bool{}
+	placeQueens(0, board, &solutions)
+	printSolutions(solutions)
 }
 
-func placeQueens(col int) {
+func placeQueens(col int, board [n][n]bool, solutions *[][]int) {
 	if col == n {
-		saveSolution()
+		saveSolution(board, solutions)
 		return
 	}
 
 	for row := 0; row < n; row++ {
-		if isSafe(row, col) {
+		if isSafe(row, col, board) {
 			board[row][col] = true
-			placeQueens(col + 1)
+			placeQueens(col+1, board, solutions)
 			board[row][col] = false
 		}
 	}
 }
 
-func isSafe(row, col int) bool {
+func isSafe(row, col int, board [n][n]bool) bool {
 	// Check row
 	for i := 0; i < col; i++ {
 		if board[row][i] {
@@ -57,7 +53,7 @@ func isSafe(row, col int) bool {
 	return true
 }
 
-func saveSolution() {
+func saveSolution(board [n][n]bool, solutions *[][]int) {
 	solution := make([]int, 0)
 	for col := 0; col < n; col++ {
 		for row := 0; row < n; row++ {
@@ -66,7 +62,7 @@ func saveSolution() {
 			}
 		}
 	}
-	solutions = append(solutions, solution)
+	*solutions = append(*solutions, solution)
 }
 
 func printSolutions() {
