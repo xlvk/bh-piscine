@@ -12,7 +12,7 @@ var (
 )
 
 func EightQueens() {
-	solutions = make([][]int, 0)
+	solutions = [][]int{}
 	placeQueens(0)
 	printSolutions()
 }
@@ -58,7 +58,7 @@ func isSafe(row, col int) bool {
 }
 
 func saveSolution() {
-	solution := make([]int, 0)
+	solution := []int{}
 	for col := 0; col < n; col++ {
 		for row := 0; row < n; row++ {
 			if board[row][col] {
@@ -71,10 +71,10 @@ func saveSolution() {
 
 func printSolutions() {
 	for _, solution := range solutions {
-		for _, pos := range solution {
-			z01.PrintRune(rune(pos + '0'))
+		for _, p := range solution {
+			z01.PrintRune(p)
 		}
-		z01.PrintRune('\n')
+		z01.PrintRune()
 	}
 }
 
