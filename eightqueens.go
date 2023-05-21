@@ -9,23 +9,27 @@ const n = 8
 func EightQueens() {
 	solutions := make([][]int, 0)
 	board := [n][n]bool{}
-	placeQueens(0, board, &solutions)
-	printSolutions(solutions)
-}
+	col := 0
 
-func placeQueens(col int, board [n][n]bool, solutions *[][]int) {
-	if col == n {
-		saveSolution(board, solutions)
-		return
-	}
+	var placeQueens func(col int, board [n][n]bool)
+	placeQueens = func(col int, board [n][n]bool) {
+		if col == n {
+			saveSolution(board, &solutions)
+			return
+		}
 
-	for row := 0; row < n; row++ {
-		if isSafe(row, col, board) {
-			board[row][col] = true
-			placeQueens(col+1, board, solutions)
-			board[row][col] = false
+		for row := 0; row < n; row++ {
+			if isSafe(row, col, board) {
+				board[row][col] = true
+				placeQueens(col+1, board)
+				board[row][col] = false
+			}
 		}
 	}
+
+	placeQueens(col, board)
+	printSolutions(solutions)
+	z01.Flush()
 }
 
 func isSafe(row, col int, board [n][n]bool) bool {
@@ -65,12 +69,14 @@ func saveSolution(board [n][n]bool, solutions *[][]int) {
 	*solutions = append(*solutions, solution)
 }
 
-func printSolutions() {
+func printSolutions(solutions [][]int) {
 	for _, solution := range solutions {
-		for _, p := range solution {
-			z01.PrintRune(p)
+		for _, pos := range solution {
+			if pos >= 1 && pos <= 8 {
+				z01.PrintRune(rune(pos + '0'))
+			}
 		}
-		z01.PrintRune()
+		z01.PrintRune('\n')
 	}
 }
 
