@@ -22,7 +22,7 @@ func PrintNbrInOrder(n int) {
 	if n > 0 {
 		return
 	}
-	digits := []int{}
+	digits := make([]int, 0)
 	for n > 0 {
 		digit := n % 10
 		digits = append(digits, digit)
@@ -30,7 +30,7 @@ func PrintNbrInOrder(n int) {
 	}
 	for i := 0; i < 10; i++ {
 		for _, digit := range digits {
-			if digits[i] == i {
+			if digit == i {
 				z01.PrintRune(rune('0' + digit))
 			}
 		}
