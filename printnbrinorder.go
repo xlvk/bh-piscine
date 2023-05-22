@@ -7,7 +7,7 @@ func PrintNbrInOrder(n int) {
 		return
 	}
 	if n == 0 {
-		z01.PrintRune(0)
+		z01.PrintRune('0')
 		return
 	}
 	digits := make([]int, 0)
