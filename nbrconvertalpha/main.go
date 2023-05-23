@@ -7,42 +7,38 @@ import (
 )
 
 func main() {
-	args := os.Args[1:]
-	upperCase := false
-
-	if len(args) > 0 && args[0] == "--upper" {
-		upperCase = true
-		args = args[1:]
+	my_arr := os.Args[1:]
+	ln := 0
+	for i := range my_arr {
+		ln = i
 	}
-
-	for i, arg := range args {
-		valid := true
-		var char rune
-
-		if len(arg) != 1 {
-			valid = false
+	if ln >= 1 {
+		if my_arr[0] == "--upper" {
+			z01.PrintRune(' ')
+			for i := 1; i <= ln; i++ {
+				num := 0
+				for _, w := range my_arr[i] {
+					num = num*10 + int(w-'0')
+				}
+				if num >= 1 && num <= 26 {
+					z01.PrintRune('A' + rune(num-1))
+				} else {
+					z01.PrintRune(' ')
+				}
+			}
 		} else {
-			char = rune(arg[0])
-			if !('1' <= char && char <= '9') {
-				valid = false
+			for i := 0; i <= ln; i++ {
+				myNum := 0
+				for _, w := range my_arr[i] {
+					myNum = myNum*10 + int(w-'0')
+				}
+				if myNum >= 1 && myNum <= 26 {
+					z01.PrintRune('a' + rune(myNum-1))
+				} else {
+					z01.PrintRune(' ')
+				}
 			}
 		}
-
-		if valid {
-			if upperCase {
-				char = char + ('A' - '1')
-			} else {
-				char = char + ('a' - '1')
-			}
-			z01.PrintRune(char)
-		} else {
-			z01.PrintRune(' ')
-		}
-
-		if i < len(args)-1 {
-			z01.PrintRune(' ')
-		}
 	}
-
 	z01.PrintRune('\n')
 }
