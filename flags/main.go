@@ -7,6 +7,16 @@ import (
 	"github.com/01-edu/z01"
 )
 
+func order(s string) {
+	var a [5000]int
+	for _, c := range s {
+		a[int(c)]++
+	}
+	for i, c := range a {
+		for c > 0 {
+			z01.PrintRune(rune(i))
+			c--
+		}
 	}
 	z01.PrintRune('\n')
 }
