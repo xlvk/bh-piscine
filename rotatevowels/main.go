@@ -7,45 +7,39 @@ import (
 )
 
 func main() {
+	var vowels []rune
+
 	arguments := os.Args[1:]
-	args := ""
-	vowels := []string{}
-	result := ""
-	changeEffectued := false
-	if len(arguments) < 1 {
-		z01.PrintRune('\n')
-	}
-	for i := 0; i < len(arguments); i++ {
-		args = args + arguments[i] + " "
-	}
-	for i := 0; i < len(args); i++ {
-		if args[i] == 'a' || args[i] == 'e' || args[i] == 'i' || args[i] == 'o' || args[i] == 'u' || args[i] == 'A' || args[i] == 'E' || args[i] == 'I' || args[i] == 'O' || args[i] == 'U' {
-			vowels = append(vowels, string(args[i]))
-			changeEffectued = true
+
+	for _, i := range arguments {
+		for j := 0; j < len(i); j++ {
+			if IsVowel(i[j]) {
+				vowels = append(vowels, rune(i[j]))
+			}
 		}
 	}
-	for i := 0; i < len(vowels); i++ {
-		for j := i + 1; j < len(vowels); j++ {
-			vowels[i], vowels[j] = vowels[j], vowels[i]
-			changeEffectued = true
+
+	counter := len(vowels) - 1
+
+	for s, i := range arguments {
+		for j := 0; j < len(i); j++ {
+			if IsVowel(i[j]) {
+				z01.PrintRune(rune(vowels[counter]))
+				counter--
+			} else {
+				z01.PrintRune(rune(i[j]))
+			}
+		}
+		if s != len(arguments)-1 {
+			z01.PrintRune(' ')
 		}
 	}
-	j := 0
-	for i := 0; i < len(args); i++ {
-		if args[i] == 'a' || args[i] == 'e' || args[i] == 'i' || args[i] == 'o' || args[i] == 'u' || args[i] == 'A' || args[i] == 'E' || args[i] == 'I' || args[i] == 'O' || args[i] == 'U' {
-			result = result + vowels[j]
-			changeEffectued = true
-			j++
-		} else {
-			result = result + string(args[i])
-			changeEffectued = true
-		}
+	z01.PrintRune('\n')
+}
+
+func IsVowel(s byte) bool {
+	if s == 'A' || s == 'E' || s == 'I' || s == 'O' || s == 'U' || s == 'a' || s == 'e' || s == 'i' || s == 'o' || s == 'u' {
+		return true
 	}
-	for i := 0; i < len(result); i++ {
-		z01.PrintRune(rune(result[i]))
-		changeEffectued = true
-	}
-	if changeEffectued {
-		z01.PrintRune('\n')
-	}
+	return false
 }
