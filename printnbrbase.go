@@ -46,7 +46,6 @@ func PrintNbrBase(nbr int, base string) {
 		nbr = -nbr
 		z01.PrintRune('-')
 	}
-
 	result = recursive_append(nbr, base, result)
 
 	for i := len(result) - 1; i >= 0; i-- {
