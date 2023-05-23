@@ -8,7 +8,10 @@ import (
 
 func main() {
 	wee := os.Args[0]
-	z01.PrintRune(wee)
-	//    names := os.Args[1:]
-	//	z01.PrintRune(reflect.TypeOf(names))
+	for _, d := range wee {
+		z01.PrintRune(d)
+		//    names := os.Args[1:]
+		//	z01.PrintRune(reflect.TypeOf(names))
+	}
+	z01.PrintRune('\n')
 }
