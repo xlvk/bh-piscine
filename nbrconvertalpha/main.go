@@ -16,20 +16,39 @@ func main() {
 	}
 
 	for _, arg := range arguments {
-		for _, c := range arg {
-			if c < '0' || c > '9' {
-				z01.PrintRune(' ')
-				break
-			}
-			numv := int(c - '0')
-			if numv >= 1 && numv <= 26 {
-				if caps {
-					z01.PrintRune(rune(numv - 1 + 'A'))
-				} else {
-					z01.PrintRune(rune(numv - 1 + 'a'))
-				}
-			}
+		if caps {
+			z01.PrintRune(toUpper(arg))
+		} else {
+			z01.PrintRune(toLower(arg))
 		}
 	}
 	z01.PrintRune('\n')
+}
+
+func toLower(arg string) rune {
+	numv := 0
+	for _, c := range arg {
+		if c < '0' || c > '9' {
+			return ' '
+		}
+		numv = numv*10 + int(c-'0')
+	}
+	if numv >= 1 && numv <= 26 {
+		return rune(numv - 1 + 'a')
+	}
+	return ' '
+}
+
+func toUpper(arg string) rune {
+	numv := 0
+	for _, c := range arg {
+		if c < '0' || c > '9' {
+			return ' '
+		}
+		numv = numv*10 + int(c-'0')
+	}
+	if numv >= 1 && numv <= 26 {
+		return rune(numv - 1 + 'A')
+	}
+	return ' '
 }
