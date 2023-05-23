@@ -13,9 +13,6 @@ func main() {
 		if word == '.' || word == '/' {
 		} else {
 			z01.PrintRune(word)
-	for i, word := range runes {
-		if i != 0 && i != 1 {
-			z01.PrintRune(rune(word))
 		}
 	}
 	z01.PrintRune('\n')
