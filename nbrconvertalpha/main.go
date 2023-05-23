@@ -92,7 +92,6 @@ func BasicAtoi2(s string, ind int) int {
 		} else {
 			break
 		}
-
 	}
 	return num
 }
@@ -101,7 +100,6 @@ func Atoi(s string) int {
 	str := []byte(s)
 	var num int
 	if SLen(s) >= 2 {
-
 		if str[0] == 43 {
 			num = BasicAtoi2(s, 1)
 		} else if str[0] == 45 {
