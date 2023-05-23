@@ -15,7 +15,7 @@ func AtoiBase(s string, base string) int {
 		for _, v := range s {
 			count := 0
 			if arr[v] {
-				for _, j := range t {
+				for _, j := range base {
 					if j == v {
 						break
 					}
