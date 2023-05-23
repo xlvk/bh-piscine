@@ -8,10 +8,11 @@ import (
 
 func main() {
 	wee := os.Args[0]
-	for i := 2; i <= len(wee); i++ {
-		z01.PrintRune(d)
-		//    names := os.Args[1:]
-		//	z01.PrintRune(reflect.TypeOf(names))
+	runes := []rune(wee)
+	for i := range runes {
+		z01.PrintRune(runes[i])
 	}
 	z01.PrintRune('\n')
+	//    names := os.Args[1:]
+	//	z01.PrintRune(reflect.TypeOf(names))
 }
