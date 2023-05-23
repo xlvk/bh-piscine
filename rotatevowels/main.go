@@ -24,7 +24,9 @@ func main() {
 			changeEffectued = true
 		}
 	}
-owels[j] = vowels[j], vowels[i]
+	for i := 0; i < len(vowels); i++ {
+		for j := i + 1; j < len(vowels); j++ {
+			vowels[i], vowels[j] = vowels[j], vowels[i]
 			changeEffectued = true
 		}
 	}
