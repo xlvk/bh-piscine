@@ -8,8 +8,7 @@ import (
 
 func main() {
 	wee := os.Args[1:]
-	runes := []rune(wee)
-	for _, word := range runes {
+	for _, word := range wee {
 		z01.PrintRune(word)
 	}
 }
