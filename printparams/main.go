@@ -12,5 +12,6 @@ func main() {
 		for _, word := range wee {
 			z01.PrintRune(word)
 		}
+		z01.PrintRune('/n')
 	}
 }
