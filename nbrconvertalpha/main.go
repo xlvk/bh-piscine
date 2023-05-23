@@ -2,7 +2,6 @@ package main
 
 import (
 	"os"
-	"strconv"
 
 	"github.com/01-edu/z01"
 )
@@ -17,15 +16,29 @@ func main() {
 	}
 
 	for i, arg := range args {
-		num, err := strconv.Atoi(arg)
-		if err != nil || num < 1 || num > 26 {
-			z01.PrintRune(' ')
+		valid := true
+		var char rune
+
+		if len(arg) != 1 {
+			valid = false
 		} else {
+			char = rune(arg[0])
+		}
+
+		if valid && char >= '1' && char <= '9' {
 			if upperCase {
-				z01.PrintRune(rune('A' + num - 1))
+				char = rune('A' + char - '1')
 			} else {
-				z01.PrintRune(rune('a' + num - 1))
+				char = rune('a' + char - '1')
 			}
+		} else {
+			valid = false
+		}
+
+		if valid {
+			z01.PrintRune(char)
+		} else {
+			z01.PrintRune(' ')
 		}
 
 		if i < len(args)-1 {
