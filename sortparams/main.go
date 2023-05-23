@@ -9,7 +9,7 @@ import (
 func main() {
 	n := len(os.Args)
 	for i := 1; i < n-1; i++ {
-		for j := 1; j < n-i-1; j++ {
+		for j := 1; j <= n-i-1; j++ {
 			if os.Args[j] > os.Args[j+1] {
 				os.Args[j], os.Args[j+1] = os.Args[j+1], os.Args[j]
 			}
