@@ -58,18 +58,3 @@ func main() {
 					if args[i] != "-o" && args[i] != "--order" {
 						ele = insert(ele, args[i])
 					}
-				}
-				if args[0][0:3] == "--i" {
-					ele = insert(ele, args[0][9:])
-				} else {
-					ele = insert(ele, args[0][3:])
-				}
-				order(ele)
-			}
-		} else {
-			fmt.Println(args[0])
-		}
-	} else {
-		help()
-	}
-}
