@@ -9,6 +9,8 @@ import (
 func main() {
 	for i := 1; i < len(os.Args); i++ {
 		wee := os.Args[i]
-		z01.PrintRune(word)
+		for _, word := range wee {
+			z01.PrintRune(word)
+		}
 	}
 }
