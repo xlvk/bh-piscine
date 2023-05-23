@@ -23,20 +23,20 @@ func main() {
 			valid = false
 		} else {
 			char = rune(arg[0])
-		}
-
-		if valid && char >= '1' && char <= '9' {
-			if upperCase {
-				char = rune('A' + char - '1')
-			} else {
-				char = rune('a' + char - '1')
+			if !('1' <= char && char <= '9') {
+				valid = false
 			}
-		} else {
-			valid = false
 		}
 
 		if valid {
+			if upperCase {
+				char = char + ('A' - '1')
+			} else {
+				char = char + ('a' - '1')
+			}
 			z01.PrintRune(char)
+		} else {
+			z01.PrintRune(' ')
 		}
 
 		if i < len(args)-1 {
