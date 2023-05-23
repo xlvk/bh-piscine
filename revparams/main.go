@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	for i := len(os.Args)-1; i > 1; i-- {
+	for i := len(os.Args) - 1; i > 1; i-- {
 		wee := os.Args[i]
 		for _, word := range wee {
 			z01.PrintRune(word)
