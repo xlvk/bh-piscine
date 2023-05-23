@@ -69,7 +69,6 @@ func main() {
 		} else {
 			fmt.Println(args[0])
 		}
-	} else {
-		help()
+	
 	}
 }
