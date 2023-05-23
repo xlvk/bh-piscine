@@ -37,8 +37,6 @@ func main() {
 
 		if valid {
 			z01.PrintRune(char)
-		} else {
-			z01.PrintRune(' ')
 		}
 
 		if i < len(args)-1 {
