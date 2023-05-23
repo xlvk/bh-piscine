@@ -25,6 +25,8 @@ func main() {
 			} else {
 				z01.PrintRune(rune(numv + 64))
 			}
+		} else {
+			z01.PrintRune(' ')
 		}
 	}
 	z01.PrintRune('\n')
