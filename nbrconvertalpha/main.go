@@ -21,12 +21,10 @@ func main() {
 		}
 		if numv >= 1 && numv <= 26 {
 			if caps == false {
-				z01.PrintRune(rune(numv + 96))
+				z01.PrintRune(rune(numv - 1 + 'a'))
 			} else {
-				z01.PrintRune(rune(numv + 64))
+				z01.PrintRune(rune(numv - 1 + 'A'))
 			}
-		} else {
-			z01.PrintRune(' ')
 		}
 	}
 	z01.PrintRune('\n')
