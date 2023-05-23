@@ -6,8 +6,8 @@ import (
  )
 
 func main() {
-	wee := os.Args
-	z01.PrintRune(len(wee))
-    names := os.Args[1:]
-	z01.PrintRune(reflect.TypeOf(names))
+	wee := os.Args[0]
+	z01.PrintRune(wee)
+//    names := os.Args[1:]
+//	z01.PrintRune(reflect.TypeOf(names))
 }
