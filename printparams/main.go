@@ -10,6 +10,6 @@ func main() {
 	wee := os.Args[1:]
 	runes := []rune(wee)
 	for _, word := range runes {
-			z01.PrintRune(word)
+		z01.PrintRune(word)
 	}
 }
