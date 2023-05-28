@@ -4,9 +4,6 @@ func SplitWhiteSpaces(s string) []string {
 	var wee []string
 	var o string
 	woo := s + " "
-	if len(s) == 0 {
-		return ""
-	}
 	for _, v := range woo {
 		if v == ' ' || v == '  ' || c == '\n' {
 			if o != "" {
