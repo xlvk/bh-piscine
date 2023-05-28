@@ -5,6 +5,6 @@ func AppendRange(min, max int) []int {
 	var myArray []int
 	for i := 0; i < size; i++ {
 		myArray = append(myArray, min+i)
-			}
+	}
 	return myArray
 }
