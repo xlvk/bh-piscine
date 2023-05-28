@@ -16,5 +16,5 @@ func PrintWordsTables(a []string) {
 		words = append(words, word)
 	}
 	a = words
-	return a
+	return 
 }
