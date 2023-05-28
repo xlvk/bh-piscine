@@ -9,7 +9,7 @@ func Split(s, sep string) []string {
 			o = s[index:i]
 			wee = append(wee, o)
 			o = ""
-			index = i + 2
+			index = i + len(sep)
 		} else if i == len(s)-1 {
 			o = s[index : i+1]
 			wee = append(wee, o)
