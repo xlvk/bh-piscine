@@ -5,9 +5,9 @@ func MakeRange(min, max int) []int {
 		return nil
 	}
 	size := max - min
-	myArray := make([]int, size+1)
-	for i := min; i < max; i++ {
-		myArray[i] = min + i
+	mySlice := make([]int, size)
+	for i := 0; i < size; i++ {
+		mySlice[i] = min + i
 	}
-	return myArray
+	return mySlice
 }
