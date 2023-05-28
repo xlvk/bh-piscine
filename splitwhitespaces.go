@@ -12,9 +12,9 @@ func SplitWhiteSpaces(s string) []string {
 				mm++
 			} else {
 				o = s[index:i]
-				mm++ 
+				mm++
 			}
-			for k : = 0; k < mm; k++ {
+			for k := 0; k < mm; k++ {
 				wee = append(wee, o)
 				o = ""
 				index = i + 1
