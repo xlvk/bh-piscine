@@ -5,7 +5,3 @@ func AppendRange(min, max int) []int {
 	myArray := make([]int, size)
 
 	for i := 0; i < size; i++ {
-		myArray[i] = min + i
-	}
-	return myArray
-}
