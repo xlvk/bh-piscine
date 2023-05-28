@@ -11,5 +11,5 @@ func ConcatParams(args []string) string {
 			c += "\n"
 		}
 	}
-	return 
+	return c
 }
