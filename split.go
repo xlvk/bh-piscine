@@ -12,11 +12,8 @@ func Split(s, sep string) []string {
 			index = i + len(sep)
 		}
 	}
-	for i := 0; i < len(s)-1; i++ {
-		if i == len(s)-1 {
-			o = s[index : i+1]
-			wee = append(wee, o)
-		}
-	}
+	// Append the remaining substring after the last occurrence of the separator
+	o = s[index:]
+	wee = append(wee, o)
 	return wee
 }
