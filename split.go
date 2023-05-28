@@ -12,7 +12,7 @@ func Split(s, sep string) []string {
 			index = i + len(sep)
 		}
 	}
-	for i :=  0; i < len(s)-1; i++ {
+	for i := 0; i < len(s)-1; i++ {
 		if i == len(s)-1 {
 			o = s[index : i+1]
 			wee = append(wee, o)
