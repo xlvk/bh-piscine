@@ -1,3 +1,5 @@
+package piscine
+
 func AppendRange(min, max int) []int {
 	size := max - min + 1
 	var myArray []int
