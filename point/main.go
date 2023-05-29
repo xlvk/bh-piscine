@@ -1,30 +1,9 @@
 package main
 
-import "github.com/01-edu/z01"
-
-func PrintNbr(n int) {
-	b := 1
-	if n < 0 {
-		b = -1
-		z01.PrintRune('-')
-	}
-	if n != 0 {
-		c := (n / 10) * b
-		if c != 0 {
-			PrintNbr(c)
-		}
-		wee := (n % 10 * b) + '0'
-		z01.PrintRune(rune(wee))
-	} else {
-		z01.PrintRune('0')
-	}
-}
-
-func PrintStr(s string) {
-	for _, ch := range s {
-		z01.PrintRune(ch)
-	}
-}
+import (
+	"fmt"
+	"github.com/01-edu/z01"
+)
 
 type point struct {
 	x, y int
@@ -36,12 +15,9 @@ func setPoint(ptr *point) {
 }
 
 func main() {
-	points := new(point)
+	points := &point{}
+
 	setPoint(points)
-	PrintStr("x = ")
-	PrintNbr(points.x)
-	PrintStr(", ")
-	PrintStr("y = ")
-	PrintNbr(points.y)
-	PrintStr("\n")
+
+	fmt.Printf("x = %d, y = %d\n", points.x, points.y)
 }
