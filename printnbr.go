@@ -4,22 +4,20 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func PrintNbr(n int64) {
+func PrintNbr(n int) {
+	b := 1
 	if n < 0 {
+		b = -1
 		z01.PrintRune('-')
-		n = -n
 	}
-	if n == 0 {
+	if n != 0 {
+		c := (n / 10) * b
+		if c != 0 {
+			PrintNbr(c)
+		}
+		wee := (n % 10 * b) + '0'
+		z01.PrintRune(rune(wee))
+	} else {
 		z01.PrintRune('0')
-		return
-	}
-	digits := make([]int64, 0)
-	for n > 0 {
-		digit := n % 10
-		digits = append(digits, digit)
-		n /= 10
-	}
-	for i := len(digits) - 1; i >= 0; i-- {
-		z01.PrintRune(rune(digits[i]) + '0')
 	}
 }
