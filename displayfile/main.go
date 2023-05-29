@@ -28,7 +28,7 @@ func main() {
 		printStr("File name missing")
 	} else if isTrue(wee[0]) {
 		printStr(EvenMsg)
-	} else if wee[0] == EvenMsg {
+	} else if wee[0] == "Almost there!!" {
 		printStr(newMsg)
 	} else if isTrue(wee[0]) == false {
 		printStr(OddMsg)
