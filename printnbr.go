@@ -4,7 +4,7 @@ import (
 	"github.com/01-edu/z01"
 )
 
-func PrintNbr(n int) {
+func PrintNbr(n int64) {
 	if n < 0 {
 		z01.PrintRune('-')
 		n = -n
@@ -13,7 +13,7 @@ func PrintNbr(n int) {
 		z01.PrintRune('0')
 		return
 	}
-	digits := make([]int, 0)
+	digits := make([]int64, 0)
 	for n > 0 {
 		digit := n % 10
 		digits = append(digits, digit)
