@@ -25,7 +25,7 @@ func main() {
 	PrintStr("x = ")
 	n := points.x
 	if n < 0 {
-		z01.PrintRune('-')
+		PrintStr("-")
 		n = -n
 	}
 	printDigits(n)
@@ -34,7 +34,7 @@ func main() {
 	n = points.y
 	if n < 0 {
 		b = -1
-		z01.PrintRune('-')
+		PrintStr("-")
 		n = -n
 	}
 	printDigits(n)
