@@ -13,22 +13,20 @@ func setPoint(ptr *point) {
 	ptr.y = 21
 }
 
+func PrintStr(s string) {
+	for _, ch := range s {
+		z01.PrintRune(ch)
+	}
+}
+
 func main() {
 	points := &point{}
 	setPoint(points)
-	z01.PrintRune('x')
-	z01.PrintRune(' ')
-	z01.PrintRune('=')
-	z01.PrintRune(' ')
+	PrintStr("x = ")
 	SolveNbr(points.x)
-	z01.PrintRune(',')
-	z01.PrintRune(' ')
-	z01.PrintRune('y')
-	z01.PrintRune(' ')
-	z01.PrintRune('=')
-	z01.PrintRune(' ')
+	PrintStr(", y = ")
 	SolveNbr(points.y)
-	z01.PrintRune('\n')
+	PrintStr("\n")
 }
 
 func SolveNbr(n int) {
@@ -36,18 +34,14 @@ func SolveNbr(n int) {
 	if n < 0 {
 		b = -1
 		z01.PrintRune('-')
-		n = -n
 	}
 	if n != 0 {
-		digits := make([]int, 0)
-		for n > 0 {
-			digit := n % 10
-			digits = append(digits, digit)
-			n /= 10
+		c := (n / 10) * b
+		if c != 0 {
+			SolveNbr(c)
 		}
-		for i := len(digits) - 1; i >= 0; i-- {
-			z01.PrintRune('0' + digits[i]*b)
-		}
+		wee := (n % 10 * b) + '0'
+		z01.PrintRune(rune(wee))
 	} else {
 		z01.PrintRune('0')
 	}
