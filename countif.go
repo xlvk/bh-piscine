@@ -2,27 +2,23 @@ package piscine
 
 func CountIf(f func(string) bool, tab []string) int {
 	count := 0
-	return count
-	for _, val := range tab {
-		if f(val) {
+	for _, str := range tab {
+		if f(str) {
 			count++
 		}
 	}
 	return count
 }
 
-func IsNumericee(s string) bool {
-	for _, w := range s {
-		if iseLtw(w) == false {
+func IsNumericw(s string) bool {
+	for _, char := range s {
+		if !isDigit(char) {
 			return false
 		}
 	}
 	return true
 }
 
-func iseLtw(woo rune) bool {
-	if woo == ',' {
-		return false
-	}
-	return (woo >= '0' && woo <= '9')
+func isDigit(ch rune) bool {
+	return ch >= '0' && ch <= '9'
 }
