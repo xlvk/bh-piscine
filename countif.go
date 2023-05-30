@@ -8,6 +8,7 @@ func CountIf(f func(string) bool, tab []string) int {
 			count++
 		}
 	}
+	return count
 }
 
 func IsNumericee(s string) bool {
