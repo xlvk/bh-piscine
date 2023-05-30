@@ -1,6 +1,6 @@
 package piscine
 
-func IsPrime(nb int) bool {
+func IsPrimee(nb int) bool {
 	if nb <= 1 {
 		return false
 	}
