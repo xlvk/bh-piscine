@@ -1,15 +1,29 @@
 package piscine
 
-func IsPrime(nb int) bool {
-	if nb <= 1 {
+func isPrime(num int) bool {
+	if num <= 1 {
 		return false
 	}
-	for i := 2; i*i <= nb; i++ {
-		if nb%i == 0 {
+
+	// Check divisibility up to the square root of the number
+	limit := intSqrte(num)
+	for i := 2; i <= limit; i++ {
+		if num%i == 0 {
 			return false
 		}
 	}
 	return true
+}
+
+func intSqrte(num int) int {
+	// Use Newton's method to find the integer square root
+	x := num
+	y := (x + 1) / 2
+	for y < x {
+		x = y
+		y = (x + num/x) / 2
+	}
+	return x
 }
 
 ffunc Map(f func(int) bool, a []int) []bool {
