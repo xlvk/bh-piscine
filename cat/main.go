@@ -58,4 +58,5 @@ func printError(err error) {
 		z01.PrintRune(errMsg[i])
 	}
 	z01.PrintRune('\n')
+	os.Exit(1)
 }
