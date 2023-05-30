@@ -1,7 +1,7 @@
 package piscine
 
 func IsPrime(num int) bool {
-	if num <= 1 {
+	if num == 1 || num == 0{
 		return false
 	}
 
