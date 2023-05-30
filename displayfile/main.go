@@ -26,9 +26,7 @@ func main() {
 	wee := os.Args[1:]
 	if len(wee) == 0 {
 		printStr("File name missing")
-	} else if isTrue(wee[0]) {
-		printStr(EvenMsg)
-	} else if wee[0] == "Almost there!!" {
+	} else if wee[0] == EvenMsg {
 		printStr(newMsg)
 	} else if isTrue(wee[0]) == false {
 		printStr(OddMsg)
