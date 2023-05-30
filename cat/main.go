@@ -29,9 +29,9 @@ func main() {
 				printError(err)
 				continue
 			}
-			if !first {
-				z01.PrintRune('\n')
-			}
+			// if !first {
+			// 	z01.PrintRune('\n')
+			// }
 			printRunes(f)
 			first = false
 			file.Close()
