@@ -26,7 +26,7 @@ func intSqrte(num int) int {
 	return x
 }
 
-ffunc Map(f func(int) bool, a []int) []bool {
+func Map(f func(int) bool, a []int) []bool {
 	m := make(map[int]bool)
 	for _, i := range a {
 		m[i] = f(i) 
