@@ -26,7 +26,7 @@ func main() {
 			}
 			f, err := ioutil.ReadAll(file)
 			if err != nil {
-				printError("ERROR: " + err)
+				printError(err)
 				continue
 			}
 			// if !first {
