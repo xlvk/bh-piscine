@@ -29,7 +29,7 @@ func intSqrte(num int) int {
 func Map(f func(int) bool, a []int) []bool {
 	m := make(map[int]bool)
 	for _, i := range a {
-		m[i] = f(i) 
+		m[i] = f(i)
 	}
 	wee := make([]bool, len(m))
 	for o, j := range wee {
