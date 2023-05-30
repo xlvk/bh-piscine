@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"io/ioutil"
 	"os"
 
@@ -21,7 +22,9 @@ func main() {
 		for _, arg := range wee {
 			file, err := os.Open(arg)
 			if err != nil {
-				printError(err)
+				err1 := errors.New("ERROR: open asd: no such file or directory")
+				// s := err.Error()
+				printError(err1)
 				continue
 			}
 			f, err := ioutil.ReadAll(file)
