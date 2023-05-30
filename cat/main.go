@@ -17,7 +17,7 @@ func main() {
 		}
 		printRunes(input)
 	} else {
-		first := true
+		// first := true
 		for _, arg := range wee {
 			file, err := os.Open(arg)
 			if err != nil {
@@ -33,7 +33,7 @@ func main() {
 			// 	z01.PrintRune('\n')
 			// }
 			printRunes(f)
-			first = false
+			// first = false
 			file.Close()
 		}
 	}
