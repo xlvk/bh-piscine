@@ -14,7 +14,10 @@ func IsPrime(nb int) bool {
 
 func Map(f func(int) bool, a []int) []bool {
 	for _, i := range a {
-		f(i)
-	}
-	return
+		if f(i) == true {
+			return true
+		} else {
+			return false
+		}
+	}	
 }
