@@ -1,5 +1,7 @@
 package piscine
 
+import "strings"
+
 func AdvancedSortWordArr(a []string, f func(a, b string) int) {
 	for i := 1; i < len(a); i++ {
 		if f(a[i-1], a[i]) > 0 {
@@ -10,10 +12,5 @@ func AdvancedSortWordArr(a []string, f func(a, b string) int) {
 }
 
 func wawawawa(a, b string) int {
-	if a < b {
-		return -1
-	} else if a > b {
-		return 1
-	}
-	return 0
+	return strings.Compare(a, b)
 }
