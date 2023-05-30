@@ -12,12 +12,14 @@ func IsPrime(nb int) bool {
 	return true
 }
 
-func Map(f func(int) bool, a []int) []bool {
+ffunc Map(f func(int) bool, a []int) []bool {
+	m := make(map[int]bool)
 	for _, i := range a {
-		if f(i) == true {
-			return true
-		} else {
-			return false
-		}
+		m[i] = f(i) 
 	}
+	wee := make([]bool, len(m))
+	for o, j := range wee {
+		wee[o] = j
+	}
+	return wee
 }
