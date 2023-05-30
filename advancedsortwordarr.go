@@ -11,7 +11,7 @@ func AdvancedSortWordArr(a []string, f func(a, b string) int) {
 	}
 }
 
-func Compare(a, b string) int {
+func wowowowwo(a, b string) int {
 	if a < b {
 		return -1
 	} else if a > b {
