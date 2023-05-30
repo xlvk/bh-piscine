@@ -1,7 +1,10 @@
 package piscine
 
-func PrintNbr()
+func PrintNbr(num int) {
+}
+
 func ForEach(f func(int), a []int) {
-	a = f(a)
-	return a
+	for _, ch := range a {
+		a = f(a)
+	}
 }
