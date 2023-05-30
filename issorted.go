@@ -12,14 +12,14 @@ func SortIntegerTablee(table []int) {
 }
 
 func IsSorted(f func(a, b int) int, a []int) bool {
-loop:
 	for i := 1; i < len(a); i++ {
-		for j := 0; j < i; j++ {
-			if f(a[j], a[i]) > 0 {
-				continue loop
-			}
+		if f(a[i-1], a[i]) > 0 {
+			return false
 		}
-		return false
 	}
 	return true
+}
+
+func isSortedBy10(a, b int) int {
+	return (a / 10) - (b / 10)
 }
