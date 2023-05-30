@@ -1,7 +1,7 @@
 package main
 
 import (
-	"errors"
+	// "errors"
 	"io/ioutil"
 	"os"
 
@@ -22,9 +22,9 @@ func main() {
 		for _, arg := range wee {
 			file, err := os.Open(arg)
 			if err != nil {
-				err1 := errors.New("ERROR: open asd: no such file or directory")
+				// err1 := errors.New("ERROR: open asd: no such file or directory")
 				// s := err.Error()
-				printError(err1)
+				printError(err)
 				continue
 			}
 			f, err := ioutil.ReadAll(file)
@@ -49,7 +49,11 @@ func printRunes(runes []byte) {
 }
 
 func printError(err error) {
-	errMsg := []rune(err.Error())
+	errMsg := []rune("ERROR: " + err.Error())
+	// errMsg1 := "ERROR: "
+	// for i,ch := range errMsg1 {
+	// 	z01.PrintRune(ch)
+	// }
 	for i := range errMsg {
 		z01.PrintRune(errMsg[i])
 	}
