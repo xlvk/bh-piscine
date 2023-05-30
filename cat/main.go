@@ -29,9 +29,9 @@ func main() {
 				printError(err)
 				continue
 			}
-			if !first {
-				z01.PrintRune('\n')
-			}
+			// if !first {
+			// 	z01.PrintRune('\n')
+			// }
 			printRunes(f)
 			first = false
 			file.Close()
@@ -50,5 +50,5 @@ func printError(err error) {
 	for i := range errMsg {
 		z01.PrintRune(errMsg[i])
 	}
-	// z01.PrintRune('\n')
+	z01.PrintRune('\n')
 }
