@@ -5,9 +5,9 @@ func Rot14(s string) string {
 	for _, r := range s {
 		if r == ' ' {
 			resulte += " "
-		} else if r >= 'A' && r <= 'N' || r >= 'a' && r <= 'n' {
+		} else if r >= 'A' && r <= 'L' || r >= 'a' && r <= 'l' {
 			resulte += string(r + 14)
-		} else if r >= 'O' && r <= 'Z' || r >= 'o' && r <= 'z' {
+		} else if r >= 'M' && r <= 'Z' || r >= 'n' && r <= 'z' {
 			resulte += string(r - 12)
 		} else {
 			resulte += string(r)
