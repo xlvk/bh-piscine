@@ -1,7 +1,7 @@
 package piscine
 
 func DescendAppendRange(max, min int) []int {
-	if max > min {
+	if max < min {
 		return nil
 	}
 	var myArray []int
