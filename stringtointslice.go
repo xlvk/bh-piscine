@@ -1,12 +1,11 @@
 package piscine
 
 func StringToIntSlice(str string) []int {
-	result := make([]int, len(str))
-	for i, char := range str {
-		if int(char) == 0 {
-			continue
-		} else {
-			result[i] = int(char)
+	result := make([]int, 0, len(str))
+	for _, char := range str {
+		bytes := []byte(string(char))
+		for _, b := range bytes {
+			result = append(result, int(b))
 		}
 	}
 	return result
