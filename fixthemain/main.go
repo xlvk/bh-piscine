@@ -2,12 +2,15 @@ package main
 
 import "github.com/01-edu/z01"
 
-const OPEN = true
-const CLOSE = false
+const (
+	OPEN  = true
+	CLOSE = false
+)
 
 type Door struct {
 	state bool
 }
+
 func PrintStr(s string) {
 	for _, r := range s {
 		z01.PrintRune(r)
@@ -28,7 +31,7 @@ func CloseDoor(Door *Door) bool {
 
 func IsDoorOpen(Door *Door) bool {
 	PrintStr("is the Door opened ?\n")
-	return Door.state 
+	return Door.state
 }
 
 func IsDoorClose(Door *Door) bool {
