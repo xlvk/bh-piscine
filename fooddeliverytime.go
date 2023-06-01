@@ -3,7 +3,7 @@ package piscine
 type food struct {
 	preptime int
 }
-  
+
 func FoodDeliveryTime(order string) int {
 	burger := "burger"
 	chips := "chips"
@@ -20,4 +20,3 @@ func FoodDeliveryTime(order string) int {
 		return 404
 	}
 }
-  
