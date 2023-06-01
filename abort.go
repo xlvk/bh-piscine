@@ -8,9 +8,8 @@ func Abort(a, b, c, d, e int) int {
 				haha := wee[j]
 				wee[j] = wee[i]
 				wee[i] = haha
-				else if wee[i] >= wee[j] {
-					continue
-				}
+			} else if wee[i] >= wee[j] {
+				continue
 			}
 		}
 	}
