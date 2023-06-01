@@ -5,9 +5,9 @@ func CollatzCountdown(start int) int {
 		return -1
 	} else {
 		if start%2 == 1 {
-			return start/2
+			return start / 2
 		} else {
-			return (3*start)+1
+			return (3 * start) + 1
 		}
 	}
 }
