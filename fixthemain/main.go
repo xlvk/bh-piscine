@@ -2,11 +2,6 @@ package main
 
 import "github.com/01-edu/z01"
 
-const (
-	OPEN  = true
-	CLOSE = false
-)
-
 type Door struct {
 	state bool
 }
@@ -17,37 +12,40 @@ func PrintStr(s string) {
 	}
 }
 
-func OpenDoor(Door *Door) bool {
-	PrintStr("Door Openning...\n")
-	Door.state = OPEN
-	return true
+func OpenDoor(pDoor *Door) {
+	PrintStr("Door Opening...\n")
+	pDoor.state = true
 }
 
-func CloseDoor(Door *Door) bool {
+func CloseDoor(pDoor *Door) {
 	PrintStr("Door Closing...\n")
-	Door.state = CLOSE
-	return true
+	pDoor.state = false
 }
 
-func IsDoorOpen(Door *Door) bool {
+func IsDoorOpen(pDoor *Door) bool {
 	PrintStr("is the Door opened ?\n")
-	return Door.state
+	return pDoor.state
 }
 
-func IsDoorClose(Door *Door) bool {
+func IsDoorClose(pDoor *Door) bool {
 	PrintStr("is the Door closed ?\n")
-	return Door.state
+	return pDoor.state
+}
+ 
+func haha(pDoor *Door) {
+	pDoor.state =!pDoor.state
 }
 
 func main() {
-	door := Door{}
-	if IsDoorClose(&door) {
-		OpenDoor(&door)
+	door := &Door{}
+	OpenDoor(door)
+	if IsDoorClose(door) {
+		haha(door)
 	}
-	if IsDoorOpen(&door) {
-		CloseDoor(&door)
+	if IsDoorOpen(door) {
+		CloseDoor(door)
 	}
-	if door.state == OPEN {
-		CloseDoor(&door)
+	if !door.state {
+		CloseDoor(door)
 	}
 }
