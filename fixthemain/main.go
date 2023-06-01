@@ -31,9 +31,9 @@ func IsDoorClose(pDoor *Door) bool {
 	PrintStr("is the Door closed ?\n")
 	return pDoor.state
 }
- 
+
 func haha(pDoor *Door) {
-	pDoor.state =!pDoor.state
+	pDoor.state = !pDoor.state
 }
 
 func main() {
