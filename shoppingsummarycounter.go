@@ -1,42 +1,38 @@
 package piscine
 
 func ShoppingSummaryCounter(str string) map[string]int {
-	haha := make([]string, 0)
-	mememe := ""
-	d := 0
-	if len(str) == 0 {
-		resulte := make(map[string]int, 0)
-		n := ""
-		resulte[n] = 1
-		return resulte
-	}
-	if len(str) == 1 {
-		resulte := make(map[string]int, 0)
-		n := ""
-		resulte[n] = 2
-		return resulte
-	}
-	for i := 0; i < len(str); i++ {
-		if str[i] == ' ' {
-			mememe += string(str[d:i])
-			haha = append(haha, mememe)
-			mememe = ""
-			d = i + 1
-		} else if i == (len(str) - 1) {
-			mememe += string(str[d : i+1])
-			haha = append(haha, mememe)
+	var list []string
+	var countList []string
+	item := ""
+	for _, runes := range str {
+		if runes == ' ' {
+			list = append(list, item)
+			item = ""
+		} else {
+			item += string(runes)
 		}
 	}
-	TheThing := haha
-	resulte := make(map[string]int, 0)
-	for j := 0; j < len(TheThing); j++ {
-		count := 0
-		for i := 0; i < len(haha); i++ {
-			if haha[i] == TheThing[j] {
-				count++
+
+	list = append(list, item)
+	for _, i := range list {
+		add := true
+		for _, new := range countList {
+			if new == i {
+				add = false
 			}
 		}
-		resulte[TheThing[j]] = count
+		if add {
+			countList = append(countList, i)
+		}
 	}
-	return resulte
+
+	shopList := make(map[string]int, len(countList))
+	for _, i := range countList {
+		shopList[i] = 0
+	}
+
+	for _, l := range list {
+		shopList[l]++
+	}
+	return shopList
 }
