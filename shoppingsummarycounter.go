@@ -4,6 +4,12 @@ func ShoppingSummaryCounter(str string) map[string]int {
 	haha := make([]string, 0)
 	mememe := ""
 	d := 0
+	if len(str) == 0 {
+		resulte := make(map[string]int, 0)
+		n := ""
+		resulte[n] = 1
+		return resulte
+	}
 	if len(str) == 1 {
 		resulte := make(map[string]int, 0)
 		n := ""
