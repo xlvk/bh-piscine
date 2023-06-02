@@ -1,7 +1,5 @@
 package piscine
 
-import "os"
-
 func ShoppingSummaryCounter(str string) map[string]int {
 	haha := make([]string, 0)
 	mememe := ""
@@ -17,9 +15,9 @@ func ShoppingSummaryCounter(str string) map[string]int {
 			haha = append(haha, mememe)
 		}
 	}
-	TheThing := os.Args
+	TheThing := haha
 	resulte := make(map[string]int, 0)
-	for j := 1; j < len(TheThing); j++ {
+	for j := 0; j < len(TheThing); j++ {
 		count := 0
 		for i := 0; i < len(haha); i++ {
 			if haha[i] == TheThing[j] {
