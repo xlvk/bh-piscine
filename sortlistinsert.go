@@ -1,6 +1,5 @@
 package piscine
 
-// structures for the linked lists
 type NodeI struct {
 	Data int
 	Next *NodeI
