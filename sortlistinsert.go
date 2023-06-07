@@ -1,12 +1,12 @@
 package piscine
 
-type NodeI struct {
+type NodeIe struct {
 	Data int
-	Next *NodeI
+	Next *NodeIe
 }
 
-func SortListInsert(l *NodeI, data_ref int) *NodeI {
-	n := &NodeI{Data: data_ref}
+func SortListInsert(l *NodeIe, data_ref int) *NodeIe {
+	n := &NodeIe{Data: data_ref}
 	n.Next = nil
 
 	if l == nil || l.Data >= n.Data {
