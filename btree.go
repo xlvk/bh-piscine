@@ -108,7 +108,6 @@ func applyGivenOrder(root *TreeNode, level int, f func(...interface{}) (int, err
 	}
 }
 
-// Apply the function f level by level
 func BTreeApplyByLevel(root *TreeNode, f func(...interface{}) (int, error)) {
 	h := BTreeLevelCount(root)
 	for i := 0; i < h; i++ {
@@ -116,13 +115,6 @@ func BTreeApplyByLevel(root *TreeNode, f func(...interface{}) (int, error)) {
 	}
 }
 
-/*-----------------------------------
-* node->  (A)                  (B)
-*         /                   /  \
-* temp-> (B)    -------->   (C)  (A)
-*       /   \                    /
-*     (C)  [z]                [z]
-*------------------------------------*/
 func BTreeRotateRight(node *TreeNode) *TreeNode {
 	if node == nil {
 		return nil
@@ -154,13 +146,6 @@ func BTreeRotateRight(node *TreeNode) *TreeNode {
 	return temp
 }
 
-/*------------------------------------
-*  node->(A)                  (B)
-*         \                 /  \
-*  temp-> (B) ------->    (A)  (C)
-*        /   \              \
-*       [z] (C)             [z]
-*------------------------------------- */
 func BTreeRotateLeft(node *TreeNode) *TreeNode {
 	if node == nil {
 		return nil
@@ -191,7 +176,6 @@ func BTreeRotateLeft(node *TreeNode) *TreeNode {
 	return temp
 }
 
-// Returns the maximum node in the subtree started by root
 func BTreeMax(root *TreeNode) *TreeNode {
 	if root == nil || root.Right == nil {
 		return root
@@ -200,7 +184,6 @@ func BTreeMax(root *TreeNode) *TreeNode {
 	return BTreeMax(root.Right)
 }
 
-// Returns the minimum value in the subtree started by root
 func BTreeMin(root *TreeNode) *TreeNode {
 	if root == nil || root.Left == nil {
 		return root
