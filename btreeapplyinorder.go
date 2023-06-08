@@ -1,6 +1,6 @@
 package piscine
 
-func BTreeApplyInorder(root *TreeNodee, f func(...interface{}) (int, error)) {
+func BTreeApplyInorder(root *TreeNode, f func(...interface{}) (int, error)) {
 	if root == nil {
 		return
 	}
