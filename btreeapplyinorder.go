@@ -1,11 +1,11 @@
 package piscine
 
-type TreeNodee struct {
-	Left, Right, Parent *TreeNodee
+type TreeNode struct {
+	Left, Right, Parent *TreeNode
 	Data                string
 }
 
-func BTreeApplyInorder(root *TreeNodee, f func(...interface{}) (int, error)) {
+func BTreeApplyInorder(root *TreeNode, f func(...interface{}) (int, error)) {
 	if root != nil {
 		BTreeApplyInorder(root.Left, f)
 		f(root.Data)
