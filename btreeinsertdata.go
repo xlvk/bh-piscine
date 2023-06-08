@@ -4,7 +4,6 @@ type TreeNode struct {
 	Left, Right, Parent *TreeNode
 	Data                string
 }
-
 func BTreeInsertData(bt *TreeNode, elem string) *TreeNode {
 	if bt == nil {
 		return &TreeNode{Data: elem}
