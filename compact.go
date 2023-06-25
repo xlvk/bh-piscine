@@ -12,6 +12,3 @@ func Compact(ptr *[]string) int {
             	*ptr = (*ptr)[:count]
                 	return count
 }
-                        }
-            }
-}
